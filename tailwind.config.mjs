@@ -10,6 +10,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: '#5D20D1',
+      },
+      fontFamily: {
+        primary: ['Jakarta', 'sans-serif'], // Define your custom font
       },
     },
   },
