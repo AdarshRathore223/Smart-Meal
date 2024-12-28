@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import BackgroundShapes from "@/components/BackgroundShapes";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +22,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-primary`}
       >
+        <div className="w-screen h-screen overflow-hidden relative select-none">
+        <BackgroundShapes />
         {children}
+        </div>
       </body>
     </html>
   );

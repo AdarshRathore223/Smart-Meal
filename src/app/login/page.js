@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-import BackgroundShapes from "@/components/BackgroundShapes";
 import Image from "next/image";
 
 import logo from "@/../public/assets/images/logo/logo-s.png";
@@ -16,10 +15,9 @@ function Page() {
   };
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative flex justify-center items-center select-none">
-      <BackgroundShapes />
+    <div className="flex justify-center items-center h-full">
       <div className="border border-[#5e20d11a] min-w-[30rem] rounded-xl min-h-24 flex flex-col justify-center items-center">
-        <Image src={logo} alt="Logo Image" className="py-10" />
+        <Image src={logo} alt="Logo Image" className="py-10"/>
         <h1 className="text-3xl font-bold text-primary">Welcome Back!</h1>
         <h3 className="text-[#151515] opacity-55 mt-1">
           Please sign in to continue
