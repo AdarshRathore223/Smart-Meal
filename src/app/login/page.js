@@ -26,7 +26,7 @@ function Page() {
         <form className="w-full p-8">
           <input
             type="email"
-            className="h-12 border rounded-md w-full outline-blue-500 m-2 p-2 placeholder:text-[#7B7B7B]"
+            className="h-12 border rounded-md w-full outline-blue-500 m-2 p-2 placeholder:text-[#7B7B7B] bg-transparent"
             placeholder="Enter User ID"
           />
           <div className="relative">

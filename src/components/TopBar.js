@@ -16,14 +16,14 @@ function TopBar() {
             <FiSearch className="h-5 w-5" />
             <input
               type="text"
-              className="bg-transparent outline-none w-full ml-4"
+              className="bg-transparent outline-none w-full ml-4 placeholder:text-xs"
               placeholder="Search for Employe or with Employee ID"
             />
           </div>
     
           <div className="flex items-center justify-center gap-3">
-            <div className="bg-[#06B077] w-12 aspect-square rounded-full flex justify-center items-center">
-              <FaWifi className="w-1/2 h-1/2 fill-white" />
+            <div className=" w-12 aspect-square rounded-full flex justify-center items-center">
+              <FaWifi className="w-1/2 h-1/2 fill-[#06B077]" />
             </div>
             <div className="bg-[#F6F2FE] w-12 aspect-square rounded-full flex justify-center items-center relative">
               <PiBell className="w-1/2 h-1/2 fill-primary" />
