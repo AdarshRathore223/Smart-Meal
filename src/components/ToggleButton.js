@@ -14,7 +14,7 @@ const ToggleButton = ({ isOn = false, onToggle, buttonclass, knobclass }) => {
 
   return (
     <div
-      className={`relative inline-flex items-center w-12 h-6 text-xs rounded-full cursor-pointer border-primary border bg-primary bg-opacity-10 `}
+      className={`relative inline-flex items-center w-12 h-6 text-xs rounded-full cursor-pointer border-primary border bg-primary-foreground bg-opacity-10 `}
       onClick={handleToggle}
     >
       <div
