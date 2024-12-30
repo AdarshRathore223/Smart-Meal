@@ -77,7 +77,7 @@ function page() {
         </div>
       </div>
 
-      <div className="border border-primary border-opacity-25 p-4 my-4 rounded-md">
+      <div className="border border-opacity-25 p-4 my-4 rounded-md">
         <div className="flex justify-evenly items-center text-primary font-bold text-xs px-2 pb-2">
           <h5 className="w-full text-start">Meal Name</h5>
           <h5 className="w-full text-start">Start Time</h5>

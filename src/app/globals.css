@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: 'Jakarta';
-  src: url('./../../public/assets/fonts/Jakarta.ttf') format('truetype');
+  font-family: "Jakarta";
+  src: url("./../../public/assets/fonts/Jakarta.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -38,7 +38,7 @@ body {
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 2, 100%, 92%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
@@ -83,4 +83,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.custom-border {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23B9B4B4FF' stroke-width='4' stroke-dasharray='1%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }

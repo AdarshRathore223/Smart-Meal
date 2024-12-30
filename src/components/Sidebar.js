@@ -25,8 +25,7 @@ import {
 function Sidebar() {
   const [activeId, setActiveId] = useState(1);
   const [subActiveId, setSubActiveId] = useState(1);
-  const [isExpanded, setisExpanded] = useState(true);
-  const [isopen, setIsopen] = useState(false);
+  const [isExpanded, setisExpanded] = useState(false);
   const navitems = [
     {
       id: 1,
@@ -36,12 +35,12 @@ function Sidebar() {
         {
           id: 1,
           name: "Product List",
-          href: "/food/product-list",
+          href: "/dashboard/product/productlist",
         },
         {
           id: 2,
           name: "Audit Trail",
-          href: "/food/audit-trail",
+          href: "",
         },
       ],
     },
@@ -53,7 +52,7 @@ function Sidebar() {
         {
           id: 3,
           name: "Meal Guidelines",
-          href: "",
+          href: "/dashboard/smartmeal/mealguidelines",
         },
       ],
     },
@@ -82,7 +81,7 @@ function Sidebar() {
         {
           id: 6,
           name: "User Right & Controls",
-          href: "",
+          href: "/dashboard/settings/userright",
         },
       ],
     },
@@ -117,10 +116,10 @@ function Sidebar() {
           type="single"
           collapsible
           className="w-full px-4"
-          value={activeId > 4 ? null : `w-full item-${activeId}`} // Close all when activeId > 4
+          value={activeId > 4 ? null : `w-full item-${activeId}`}
           onValueChange={(value) => {
-            const id = value ? parseInt(value.split("-").pop()) : null; // Parse id from value
-            setActiveId(id || null); // Set activeId or reset if no value
+            const id = value ? parseInt(value.split("-").pop()) : null;
+            setActiveId(id || null);
           }}
         >
           {navitems.map(({ id, label, icon, sub }) => (
@@ -129,10 +128,16 @@ function Sidebar() {
                 <AccordionItem value={`w-full item-${id}`}>
                   <AccordionTrigger
                     onClick={() => setActiveId(id)}
-                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-xl ${
+                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-md ${
                       activeId === id
                         ? "fill-white text-white bg-primary"
                         : "fill-primary"
+                    } ${
+                      id === 4
+                        ? id === activeId
+                          ? "stroke-primary"
+                          : "stroke-white"
+                        : ""
                     }`}
                   >
                     <div className="flex items-center gap-1">
@@ -145,9 +150,10 @@ function Sidebar() {
                     {sub.map(({ id: subId, name, href }, index) => (
                       <a
                         key={index}
+                        href={href}
                         className={`flex items-center justify-between text-xs text-gray-700 hover:text-primary py-1 ml-4 ${
                           subActiveId === subId ? "font-bold text-primary" : ""
-                        }`}
+                        } `}
                         onClick={() => setSubActiveId(subId)}
                       >
                         {name}
@@ -161,10 +167,18 @@ function Sidebar() {
               ) : (
                 <div
                   onClick={() => setActiveId(id)}
-                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-xl ${
-                    activeId === id
-                      ? "fill-white text-white bg-primary"
-                      : "fill-primary"
+                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-md 
+                    ${isExpanded===false && "aspect-square"}
+                    ${
+                      activeId === id
+                        ? "fill-white text-white bg-primary"
+                        : "fill-primary"
+                    } ${
+                    id === 4
+                      ? id === activeId
+                        ? "stroke-primary"
+                        : "stroke-white"
+                      : ""
                   }`}
                 >
                   <a className="flex items-center gap-1">
