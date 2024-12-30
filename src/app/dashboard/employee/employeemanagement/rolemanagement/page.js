@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
-import ToggleButton from "@/components/ToggleButton";
+import ToggleButton from "@/components/ToggleButton.jsx";
 import { FiSearch, FiEdit3 } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
 function page() {

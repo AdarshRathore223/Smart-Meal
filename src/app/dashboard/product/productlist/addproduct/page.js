@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdDone } from "react-icons/md";
-import ToggleButton from "@/components/ToggleButton";
+import ToggleButton from "@/components/ToggleButton.jsx";
 function page() {
   const [activeButton, setActiveButton] = useState("Availability");
   const [selectAll, setSelectAll] = useState(false);

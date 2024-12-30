@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleButton from "@/components/ToggleButton";
+import ToggleButton from "@/components/ToggleButton.jsx";
 
 import { CiExport } from "react-icons/ci";
 import { FiSearch, FiEdit3 } from "react-icons/fi";

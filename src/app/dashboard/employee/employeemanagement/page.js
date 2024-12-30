@@ -18,7 +18,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { IoFilterSharp } from "react-icons/io5";
 import { MdAddCircleOutline } from "react-icons/md";
 import { ChevronRight } from "lucide-react";
-import ToggleButton from "@/components/ToggleButton";
+import ToggleButton from "@/components/ToggleButton.jsx";
 
 function page() {
   const [sortByOpen, setSortByOpen] = useState(false);
