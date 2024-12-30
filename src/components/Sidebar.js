@@ -64,7 +64,7 @@ function Sidebar() {
         {
           id: 4,
           name: "Employee Profiles",
-          href: "",
+          href: "/dashboard/employee/employeemanagement",
         },
       ],
     },
