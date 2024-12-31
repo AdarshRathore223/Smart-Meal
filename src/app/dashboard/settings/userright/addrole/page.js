@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import CheckboxButton from "@/components/CheckboxButton";
+import Sidebar from "@/components/Sidebar";
 function page() {
   const [apps, setApps] = useState([
     { id: 1, access: true, label: "POS Access" },
@@ -19,6 +20,8 @@ function page() {
   };
   
   return (
+    <>
+    <Sidebar active={4} subactive={6}/>
     <div className="w-full h-full bg-white m-3 rounded-md p-2 pt-4 border">
       <div className="flex justify-between">
         <h1 className="font-extrabold text-xl mb-10">
@@ -77,6 +80,7 @@ function page() {
         </button>
       </div>
     </div>
+    </>
   );
 }
 

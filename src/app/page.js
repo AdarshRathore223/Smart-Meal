@@ -17,7 +17,7 @@ function Page() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
-    window.location.href = "/dashboard/employee/employeemanagement";
+    window.location.href = "/dashboard/employee/employeeprofile";
   };
 
   return (

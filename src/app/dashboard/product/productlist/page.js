@@ -31,6 +31,7 @@ import { MdAddCircleOutline } from "react-icons/md";
 import { AiOutlineFolderAdd } from "react-icons/ai";
 import process from "@/../public/assets/images/Icons/Groupprocessing.svg";
 import Image from "next/image";
+import Sidebar from "@/components/Sidebar";
 function page() {
   const [sortByOpen, setSortByOpen] = useState(false);
   const [exportOpen, setExportOpen] = useState(false);
@@ -149,6 +150,8 @@ function page() {
     );
   };
   return (
+    <>
+    <Sidebar active={1} subactive={1}/>
     <div className="w-full h-full bg-white m-3 rounded-md p-2 pt-4 border">
       <div className="flex justify-between">
         <h1 className="font-extrabold text-xl mb-10">Product</h1>
@@ -311,11 +314,11 @@ function page() {
                 index % 2 == 0 ? "bg-[#f8f5fe]" : "bg-[#f7f7f7]"
               }`}
             >
-              <a className="text-start w-[14%] text-[#538dec] underline">
+              <a href={`./productlist/[${item.code}]`} className="text-start w-[14%] text-[#538dec] underline">
                 {item.group || "-"}
               </a>
-              <h5 className="text-start w-[14%]">{item.code || "-"}</h5>
-              <h5 className="text-start w-[14%]">{item.type || "-"}</h5>
+              <a href={`./productlist/[${item.code}]`} className="text-start w-[14%]">{item.code || "-"}</a>
+              <a href={`./productlist/[${item.code}]`} className="text-start w-[14%]">{item.type || "-"}</a>
               <h5 className="text-start w-[14%] text-[#538dec] underline">
                 {item.price || "-"}
               </h5>
@@ -341,6 +344,7 @@ function page() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

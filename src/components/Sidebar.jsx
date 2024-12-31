@@ -22,32 +22,27 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-function Sidebar() {
-  const [activeId, setActiveId] = useState(1);
-  const [subActiveId, setSubActiveId] = useState(1);
-  const [isExpanded, setisExpanded] = useState(false);
+function Sidebar({ active, subactive }) {
+  const [activeId, setActiveId] = useState(active);
+  const [subActiveId, setSubActiveId] = useState(subactive);
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const navitems = [
     {
       id: 1,
       label: "Product Management",
       icon: <Food className="w-5 h-5" />,
+      href: "/dashboard/product/productlist",
       sub: [
-        {
-          id: 1,
-          name: "Product List",
-          href: "/dashboard/product/productlist",
-        },
-        {
-          id: 2,
-          name: "Audit Trail",
-          href: "",
-        },
+        { id: 1, name: "Product List", href: "/dashboard/product/productlist" },
+        { id: 2, name: "Audit Trail", href: "#" },
       ],
     },
     {
       id: 2,
       label: "Smart Meal",
       icon: <Meal className="w-5 h-5" />,
+      href: "/dashboard/smartmeal/mealguidelines",
       sub: [
         {
           id: 3,
@@ -60,24 +55,21 @@ function Sidebar() {
       id: 3,
       label: "Employee Management",
       icon: <People className="w-4 h-4" />,
+      href: "/dashboard/employee/employeeprofile",
       sub: [
         {
           id: 4,
           name: "Employee Profiles",
-          href: "/dashboard/employee/employeemanagement",
+          href: "/dashboard/employee/employeeprofile",
         },
       ],
     },
     {
       id: 4,
       label: "Settings",
-      icon: <Setting />,
+      icon: <Setting className="w-5 h-5" />,
       sub: [
-        {
-          id: 5,
-          name: "Shop Information",
-          href: "",
-        },
+        { id: 5, name: "Shop Information", href: "" },
         {
           id: 6,
           name: "User Right & Controls",
@@ -88,20 +80,15 @@ function Sidebar() {
     {
       id: 5,
       label: "Integration",
-      icon: <Link />,
-      href: "/integration",
+      icon: <Link className="w-5 h-5" />,
+      href: "#",
     },
-    {
-      id: 6,
-      label: "FAQ",
-      icon: <Faq />,
-      href: "/faq",
-    },
+    { id: 6, label: "FAQ", icon: <Faq className="w-5 h-5" />, href: "#" },
     {
       id: 7,
       label: "Onboarding",
-      icon: <Video />,
-      href: "/onboarding",
+      icon: <Video className="w-5 h-5" />,
+      href: "#",
     },
   ];
 
@@ -116,31 +103,30 @@ function Sidebar() {
           type="single"
           collapsible
           className="w-full px-4"
-          value={activeId > 4 ? null : `w-full item-${activeId}`}
-          onValueChange={(value) => {
-            const id = value ? parseInt(value.split("-").pop()) : null;
-            setActiveId(id || null);
-          }}
+          value={activeId > 4 ? null : `item-${activeId}`}
         >
-          {navitems.map(({ id, label, icon, sub }) => (
+          {navitems.map(({ id, label, icon, sub, href }) => (
             <div key={id} className="flex flex-col items-start w-full">
               {sub && isExpanded ? (
-                <AccordionItem value={`w-full item-${id}`}>
+                <AccordionItem value={`item-${id}`}>
                   <AccordionTrigger
                     onClick={() => setActiveId(id)}
-                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-md ${
+                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-center w-full rounded-md ${
                       activeId === id
                         ? "fill-white text-white bg-primary"
                         : "fill-primary"
-                    } ${
-                      id === 4
-                        ? id === activeId
-                          ? "stroke-primary"
-                          : "stroke-white"
-                        : ""
-                    }`}
+                    }
+                     ${
+                       id === 4
+                         ? id === activeId
+                           ? "stroke-primary"
+                           : "stroke-white"
+                         : ""
+                     }
+                    
+                    `}
                   >
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center justify-center gap-3">
                       {icon}
                       {isExpanded && label}
                     </div>
@@ -153,7 +139,7 @@ function Sidebar() {
                         href={href}
                         className={`flex items-center justify-between text-xs text-gray-700 hover:text-primary py-1 ml-4 ${
                           subActiveId === subId ? "font-bold text-primary" : ""
-                        } `}
+                        }`}
                         onClick={() => setSubActiveId(subId)}
                       >
                         {name}
@@ -165,15 +151,15 @@ function Sidebar() {
                   </AccordionContent>
                 </AccordionItem>
               ) : (
-                <div
+                <a
+                  href={!isExpanded ? href : undefined}
                   onClick={() => setActiveId(id)}
-                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-md 
-                    ${isExpanded===false && "aspect-square"}
-                    ${
-                      activeId === id
-                        ? "fill-white text-white bg-primary"
-                        : "fill-primary"
-                    } ${
+                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-center w-full rounded-md ${
+                    activeId === id
+                      ? "fill-white text-white bg-primary"
+                      : "fill-primary"
+                  }
+                  ${
                     id === 4
                       ? id === activeId
                         ? "stroke-primary"
@@ -181,11 +167,10 @@ function Sidebar() {
                       : ""
                   }`}
                 >
-                  <a className="flex items-center gap-1">
+                  <div className="flex items-center justify-center w-full">
                     {icon}
-                    {isExpanded && label}
-                  </a>
-                </div>
+                  </div>
+                </a>
               )}
 
               {id === 4 && (
@@ -206,7 +191,7 @@ function Sidebar() {
         className={`rounded-full bg-white border absolute top-[5%] -right-2 p-[0.1rem] transition-transform duration-300 ease-in-out ${
           isExpanded && "rotate-180"
         }`}
-        onClick={() => setisExpanded(!isExpanded)}
+        onClick={() => setIsExpanded(!isExpanded)}
       />
     </div>
   );
