@@ -160,7 +160,7 @@ function page() {
           </h1>
           <a
             className="bg-primary text-white font-bold rounded-md h-12 w-48 flex justify-center items-center gap-2 cursor-pointer hover:bg-purple-900"
-            href="./productlist/addproduct"
+            href="./addproduct"
           >
             <MdAddCircleOutline />
             Add Product
@@ -317,7 +317,7 @@ function page() {
                   index % 2 == 0 ? "bg-[#f8f5fe]" : "bg-[#f7f7f7]"
                 }`}
               >
-                <a className="text-start w-[14%] text-[#538dec] underline">
+                <a href={`./productlist/${item.code}`} className="text-start w-[14%] text-[#538dec] underline">
                   {item.group || "-"}
                 </a>
                 <h5 className="text-start w-[14%]">{item.code || "-"}</h5>

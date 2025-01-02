@@ -210,211 +210,60 @@ function page() {
 
   const employeData = [
     {
-      Name: "Sachin Prabhasker",
-      Department: "Health Care",
-      Designation: "Doctor",
-      Location: "ICU",
-      Access: "Backoffice POS",
-      Status: true,
+      Productcode: "123 456",
+      Shopname: "Dhanawantary",
+      Date: "13/12/2024",
+      Time: "10:45:00",
+      User: "John Doe",
+      Feildchanged: "Breakfast",
+      Orginalvalue: "Idly",
+      Updatedvalue: "Single Idly",
+      ProductName: "Idly",
+      Action: "Updated",
     },
     {
-      Name: "Sachin Prabhasker",
-      Department: "Health Care",
-      Designation: "Doctor",
-      Location: "ICU",
-      Access: "Backoffice POS",
-      Status: true,
+      Productcode: "123 456",
+      Shopname: "Dhanawantary",
+      Date: "13/12/2024",
+      Time: "10:45:00",
+      User: "John Doe",
+      Feildchanged: "Breakfast",
+      Orginalvalue: "Idly",
+      Updatedvalue: "Single Idly",
+      ProductName: "Idly",
+      Action: "Updated",
     },
     {
-      Name: "Sachin Prabhasker",
-      Department: "Health Care",
-      Designation: "Doctor",
-      Location: "ICU",
-      Access: "Backoffice POS",
-      Status: true,
+      Productcode: "123 456",
+      Shopname: "Dhanawantary",
+      Date: "13/12/2024",
+      Time: "10:45:00",
+      User: "John Doe",
+      Feildchanged: "Breakfast",
+      Orginalvalue: "Idly",
+      Updatedvalue: "Single Idly",
+      ProductName: "Idly",
+      Action: "Updated",
     },
     {
-      Name: "Sachin Prabhasker",
-      Department: "Health Care",
-      Designation: "Doctor",
-      Location: "ICU",
-      Access: "Backoffice POS",
-      Status: true,
-    },
-    {
-      Name: "Sachin Prabhasker",
-      Department: "Health Care",
-      Designation: "Doctor",
-      Location: "ICU",
-      Access: "Backoffice POS",
-      Status: true,
+      Productcode: "123 456",
+      Shopname: "Dhanawantary",
+      Date: "13/12/2024",
+      Time: "10:45:00",
+      User: "John Doe",
+      Feildchanged: "Breakfast",
+      Orginalvalue: "Idly",
+      Updatedvalue: "Single Idly",
+      ProductName: "Idly",
+      Action: "Updated",
     },
   ];
   return (
     <>
-      <Sidebar active={3} subactive={4} />
+      <Sidebar active={1} subactive={2} />
       <div className="w-full h-full bg-white m-3 rounded-md p-2 pt-4 border">
         <div className="flex justify-between">
-          <h1 className="font-extrabold text-xl mb-10">Employee Management</h1>
-          <AlertDialog>
-            <AlertDialogTrigger className="bg-primary text-white font-bold rounded-md h-12 w-48 flex justify-center items-center gap-2 cursor-pointer hover:bg-purple-900">
-              <MdAddCircleOutline />
-              Add Employee
-            </AlertDialogTrigger>
-            <AlertDialogContent className="p-0 border-none max-w-[60rem]">
-              <AlertDialogHeader>
-                <AlertDialogTitle className="bg-primary rounded-t-md text-sm text-white p-4 flex justify-between items-center">
-                  Create / Edit Employee
-                  <AlertDialogCancel className="bg-transparent border-0 hover:bg-transparent shadow-none">
-                    <IoClose className="p-[1px] border-2 border-white  bg-white rounded-full text-destructive font-bold" />
-                  </AlertDialogCancel>
-                </AlertDialogTitle>
-                <form className="min-h-[60vh]">
-                  <div className="p-4 flex flex-col gap-2">
-                    <input
-                      placeholder="First Name"
-                      className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none w-4/5"
-                    />
-                    <input
-                      placeholder="Second name"
-                      className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none w-4/5"
-                    />
-
-                    <div className="flex gap-3 text-[0.7rem] relative w-full mt-2">
-                      {[
-                        "Main Information",
-                        "Workplace Details",
-                        "Shift & Eligibilty",
-                        "App Access",
-                        "Generate QR code",
-                      ].map((buttonLabel) => (
-                        <button
-                          key={buttonLabel}
-                          className={`p-3 px-8 rounded-md font-semibold flex justify-center items-center gap-1 w-1/4 ${
-                            activeButton === buttonLabel
-                              ? "bg-yellow text-white"
-                              : "bg-yellow_secondary text-gray-900"
-                          }`}
-                          onClick={(e) => handleButtonClick(e, buttonLabel)}
-                        >
-                          {buttonLabel}
-                        </button>
-                      ))}
-                    </div>
-                    {activeButton === "Main Information" && (
-                      <div className="flex">
-                        <div className="grid grid-cols-2 gap-2">
-                          <input
-                            placeholder="Enter Employee ID"
-                            className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                          />
-                          <Dropdown placeholder="Select Device User Role" />
-                          <Dropdown placeholder="Select Designtion" />
-                          <Dropdown placeholder="Select Reporting Manager" />
-                          <input
-                            placeholder="Enter Employee ID"
-                            className="col-span-2 border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                          />
-                        </div>
-
-                        <div className="flex justify-center h-24 w-1/2 items-center gap-2">
-                          <ToggleButton /> Job Status
-                        </div>
-                      </div>
-                    )}
-
-                    {activeButton === "Workplace Details" && (
-                      <div className="flex w-2/3">
-                        <div className="grid grid-cols-2 gap-2 w-full">
-                          <Dropdown placeholder="Select Workplace Location" />
-                          <Dropdown placeholder="Select Department" />
-                        </div>
-                      </div>
-                    )}
-
-                    {activeButton === "Shift & Eligibilty" && (
-                      <div className="flex w-2/3 flex-col">
-                        <div className="grid grid-cols-2 gap-2 w-full">
-                          <Dropdown placeholder="Select Shift Type" />
-                        </div>
-                        <div className="font-semibold flex flex-col justify-center my-2">
-                          Access to Smart Meal App
-                          <div className="text-[0.7rem] flex items-center gap-2">
-                            <ToggleButton /> Eligible for meals
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {activeButton === "App Access" && (
-                      <div className="flex flex-col w-2/3">
-                        <div>
-                          <div className="text-xs font-semibold my-2">
-                            Access to Point of sale
-                          </div>
-                          <div className="grid grid-cols-2 gap-2 w-full">
-                            <input
-                              placeholder="Enter PIN code for POS"
-                              className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-xs font-semibold my-2">
-                            Access to Backoffice
-                          </div>
-                          <div className="grid grid-cols-2 gap-2 w-full">
-                            <input
-                              placeholder="Enter Email"
-                              className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                            />
-                            <input
-                              placeholder="Enter Password"
-                              className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-xs font-semibold my-2">
-                            Invitation to the Backoffice
-                          </div>
-                          <div className="grid grid-cols-2 gap-2 w-full">
-                            <input
-                              placeholder="Enter Email"
-                              className="border-2 rounded-md placeholder:text-black placeholder:text-[0.7rem] placeholder:font-bold p-1 px-2 outline-none"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {activeButton === "Generate QR code" && (
-                      <div className="w-full h-44 flex justify-center items-end">
-                        <div className="w-52 h-16 bg-gray-100 rounded-md text-[0.7rem] font-bold flex items-end justify-center p-2 relative">
-                          <MdOutlineFileDownload className="w-5 h-5" />
-                          Download QR code
-                          <Image
-                            src={qr}
-                            alt="User QR code"
-                            className="absolute bottom-10 w-36 aspect-square bg-white p-4 rounded-md shadow-[15px_0px_25px_10px]"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </form>
-              </AlertDialogHeader>
-              <AlertDialogFooter className="p-4">
-                <AlertDialogCancel className="bg-destructive-foreground text-destructive w-32">
-                  Cancel
-                </AlertDialogCancel>
-
-                <AlertDialogAction className="w-32">
-                  Save Changes
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          <h1 className="font-extrabold text-xl mb-10">Audit Trail</h1>
         </div>
         <div className="flex justify-between w-full gap-3">
           <div className="flex gap-3 items-center">
@@ -507,10 +356,6 @@ function page() {
             </DropdownMenu>
 
             <div className="h-[40%] border-l border-gray-300 " />
-
-            <button className="bg-gray-100 p-2 px-8 rounded-md font-semibold text-sm flex gap-1">
-              <CiExport className="stroke-1 w-4 h-4 rotate-180" /> Import Goods
-            </button>
             <DropdownMenu
               open={exportOpen}
               onOpenChange={(isOpen) => {
@@ -553,13 +398,8 @@ function page() {
             </DropdownMenu>
           </div>
           <div className="flex gap-3 mr-2 items-center">
-            <div className="bg-[#f7f7f7] p-2 rounded-xl flex items-center min-w-[15rem] max-md:w-1/4 ">
+            <div className="bg-[#f7f7f7] p-2 rounded-xl flex items-center p-1">
               <FiSearch className="h-5 w-5" />
-              <input
-                type="text"
-                className="bg-transparent outline-none w-full ml-4 placeholder:text-xs"
-                placeholder="Search for Employee"
-              />
             </div>
 
             <div>
@@ -607,13 +447,16 @@ function page() {
 
         <div className="border border-opacity-25 p-4 my-4 rounded-md">
           <div className="flex justify-evenly items-center text-primary font-bold text-xs px-2 pb-2">
-            <h5 className="text-start w-[14%]">Name</h5>
-            <h5 className="text-start w-[14%]">Department</h5>
-            <h5 className="text-start w-[14%]">Designation</h5>
-            <h5 className="text-start w-[14%]">Location</h5>
-            <h5 className="text-start w-[14%]">App Access</h5>
-            <h5 className="text-start w-[14%]">Status</h5>
-            <h5 className="text-start w-[14%]">Actions</h5>
+            <h5 className="text-start w-[14%]">Product code</h5>
+            <h5 className="text-start w-[14%]">Shop Name</h5>
+            <h5 className="text-start w-[14%]">Date</h5>
+            <h5 className="text-start w-[14%]">Time</h5>
+            <h5 className="text-start w-[14%]">User</h5>
+            <h5 className="text-start w-[14%]">Feild Changed</h5>
+            <h5 className="text-start w-[14%]">Ordinal Value</h5>
+            <h5 className="text-start w-[14%]">Upadated Value</h5>
+            <h5 className="text-start w-[14%]">Product Name</h5>
+            <h5 className="text-start w-[14%]">Action</h5>
           </div>
 
           <div className="h-96 overflow-y-scroll">
@@ -624,47 +467,16 @@ function page() {
                   index % 2 == 0 ? "bg-[#f8f5fe]" : "bg-[#f7f7f7]"
                 }`}
               >
-                <a
-                  href="./employeeprofile/rolemanagement"
-                  className="text-start w-[14%]"
-                >
-                  {item.Name || "-"}
-                </a>
-                <a
-                  href="./employeeprofile/rolemanagement"
-                  className="text-start w-[14%]"
-                >
-                  {item.Department || "-"}
-                </a>
-                <a
-                  href="./employeeprofile/rolemanagement"
-                  className="text-start w-[14%]"
-                >
-                  {item.Designation || "-"}
-                </a>
-                <a
-                  href="./employeeprofile/rolemanagement"
-                  className="text-start w-[14%]"
-                >
-                  {item.Location || "-"}
-                </a>
-                <a
-                  href="./employeeprofile/rolemanagement"
-                  className="text-start w-[14%]"
-                >
-                  {item.Access || "-"}
-                </a>
-                <h5 className="text-start w-[14%] pl-4">
-                  <ToggleButton isOn={item.Status} />
-                </h5>
-                <div className="w-[14%] flex gap-2 justify-start">
-                  <button className="aspect-square rounded-full bg-white h-10 w-10 flex justify-center items-center shadow-lg">
-                    <FiEdit3 className="h-1/2 w-1/2 p-[2px]" />
-                  </button>
-                  <button className="aspect-square rounded-full bg-red-100 h-10 w-10 flex justify-center items-center shadow-lg">
-                    <RiDeleteBinLine className="fill-red-600 h-1/2 w-1/2" />
-                  </button>
-                </div>
+                <a className="text-start w-[14%]">{item.Productcode || "-"}</a>
+                <a className="text-start w-[14%]">{item.Shopname || "-"}</a>
+                <a className="text-start w-[14%]">{item.Date || "-"}</a>
+                <a className="text-start w-[14%]">{item.Time || "-"}</a>
+                <a className="text-start w-[14%]">{item.User || "-"}</a>
+                <a className="text-start w-[14%]">{item.Feildchanged || "-"}</a>
+                <a className="text-start w-[14%]">{item.Orginalvalue || "-"}</a>
+                <a className="text-start w-[14%]">{item.Updatedvalue || "-"}</a>
+                <a className="text-start w-[14%]">{item.ProductName || "-"}</a>
+                <a className="text-start w-[14%]">{item.Action || "-"}</a>
               </div>
             ))}
           </div>

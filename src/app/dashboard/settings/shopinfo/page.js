@@ -2,14 +2,11 @@
 import React, { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import { CiLocationOn } from "react-icons/ci";
-import { FiSearch, FiEdit3 } from "react-icons/fi";
+import { FiEdit3 } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
 import { RiDeleteBinLine } from "react-icons/ri";
-import licence from "@/../public/assets/images/Icons/license.svg"
-import pos from "@/../public/assets/images/Icons/pos.svg"
-import kitchen from "@/../public/assets/images/Icons/kitchen.svg"
 function page() {
-  const [activeButton, setActiveButton] = useState("Subscription");
+  const [activeButton, setActiveButton] = useState("My Shop Details");
   const [activeShopData, setActiveShopData] = useState({
     id: 1,
     name: "Vijankara Padmasanna",

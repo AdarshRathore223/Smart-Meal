@@ -190,7 +190,6 @@ function page() {
                 <AlertDialogCancel className="bg-destructive-foreground text-destructive w-1/2">
                   Cancel
                 </AlertDialogCancel>
-
                 <AlertDialogAction className="w-1/2">
                   Create Group
                 </AlertDialogAction>

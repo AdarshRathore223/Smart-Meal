@@ -7,6 +7,7 @@ import { IoFilterSharp } from "react-icons/io5";
 import { LuCopy } from "react-icons/lu";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdAddCircleOutline } from "react-icons/md";
+import Sidebar from "@/components/Sidebar";
 function page() {
   const mealTimes = [
     {
@@ -53,6 +54,8 @@ function page() {
     },
   ];
   return (
+    <>
+    <Sidebar active={2} subactive={3}/>
     <div className="w-full h-full bg-white m-3 rounded-md p-2 pt-4 border">
       <div className="flex justify-between">
       <h1 className="font-extrabold text-xl mb-10">Smart Meal</h1>
@@ -124,6 +127,7 @@ function page() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

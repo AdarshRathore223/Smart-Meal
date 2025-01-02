@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -35,7 +34,7 @@ function Sidebar({ active, subactive }) {
       href: "/dashboard/product/productlist",
       sub: [
         { id: 1, name: "Product List", href: "/dashboard/product/productlist" },
-        { id: 2, name: "Audit Trail", href: "#" },
+        { id: 2, name: "Audit Trail", href: "/dashboard/product/audittrail" },
       ],
     },
     {
@@ -68,8 +67,9 @@ function Sidebar({ active, subactive }) {
       id: 4,
       label: "Settings",
       icon: <Setting className="w-5 h-5" />,
+      href: "/dashboard/settings/shopinfo",
       sub: [
-        { id: 5, name: "Shop Information", href: "" },
+        { id: 5, name: "Shop Information", href: "/dashboard/settings/shopinfo" },
         {
           id: 6,
           name: "User Right & Controls",
@@ -111,7 +111,7 @@ function Sidebar({ active, subactive }) {
                 <AccordionItem value={`item-${id}`}>
                   <AccordionTrigger
                     onClick={() => setActiveId(id)}
-                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-center w-full rounded-md ${
+                    className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-start w-full rounded-md ${
                       activeId === id
                         ? "fill-white text-white bg-primary"
                         : "fill-primary"
@@ -154,7 +154,7 @@ function Sidebar({ active, subactive }) {
                 <a
                   href={!isExpanded ? href : undefined}
                   onClick={() => setActiveId(id)}
-                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center justify-center w-full rounded-md ${
+                  className={`p-4 cursor-pointer flex gap-1 text-xs font-bold items-center w-full rounded-md ${
                     activeId === id
                       ? "fill-white text-white bg-primary"
                       : "fill-primary"
@@ -165,11 +165,14 @@ function Sidebar({ active, subactive }) {
                         ? "stroke-primary"
                         : "stroke-white"
                       : ""
-                  }`}
+                  }
+                  ${isExpanded? "justify-start":"justify-center" }`
+                }
                 >
-                  <div className="flex items-center justify-center w-full">
-                    {icon}
-                  </div>
+                  <div className="flex items-center justify-center gap-3">
+                      {icon}
+                      {isExpanded && label}
+                    </div>
                 </a>
               )}
 
