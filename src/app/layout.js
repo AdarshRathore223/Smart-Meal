@@ -3,9 +3,8 @@ import "./globals.css";
 import BackgroundShapes from "@/components/BackgroundShapes";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
-
 const jakarta = Plus_Jakarta_Sans({
-  subsets:["latin"],
+  subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
@@ -17,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${jakarta.className} antialiased`}
-      >
+      <body className={`${jakarta.className} antialiased`}>
         <div className="w-screen h-screen overflow-hidden relative select-none">
           <BackgroundShapes />
           {children}

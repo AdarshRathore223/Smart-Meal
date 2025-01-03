@@ -4,9 +4,7 @@ function layout({ children }) {
   return (
     <div className="w-full h-full flex flex-col">
       <TopBar />
-      <div className="flex h-full">
-        {children}
-      </div>
+      <div className="flex h-full">{children}</div>
     </div>
   );
 }
